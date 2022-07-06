@@ -1,5 +1,6 @@
 const App = () => {
   return <div>😒
+    <input type='text'/>
     <button>add</button>
     мололдец
     yeah
