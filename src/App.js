@@ -1,4 +1,6 @@
+
 const App = () => {
+
   return <div>😒
     <input type='text'/>
     <button>add</button>
@@ -7,5 +9,7 @@ const App = () => {
     almaz
     cool
   </div>;
+
 };
 export default App;
+
