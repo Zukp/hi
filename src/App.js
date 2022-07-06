@@ -3,6 +3,7 @@ const App = () => {
     мололдец
     yeah
     almaz
+    cool
   </div>;
 };
 export default App;
