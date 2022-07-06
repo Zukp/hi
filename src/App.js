@@ -2,21 +2,33 @@ import { useState } from "react";
 import './App.css';
 
 const App = () => {
-  let [state, setstate] = useState("");
+ 
   let [value, setvalue] = useState("");
-  function add() {
-    setvalue(state);
+  let [state,setstate] = useState([])
+
+  function add(e) {
+    setvalue(e.target.value)
+  }
+  const submitHandler = (e) => {
+    e.preventDefault()
+    setstate((prev) => {
+      return [...prev,{name:value}]
+    })
   }
   return (
     <div>
       😒
       <input
         type="text"
-        onChange={(e) => setstate(e.target.value)}
-        value={state}
+        onChange={add}
+        value={value}
       />
-      <button onClick={add}>add</button>
-      <p className="text">{value}</p>
+      <button onClick={submitHandler}>add</button>
+      {
+        state.map((i) => {
+          return <li className="text">{i.name}</li>
+        })
+      }
     </div>
   );
 };
