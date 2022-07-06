@@ -1,6 +1,6 @@
 const App = () => {
   return <div>😒
-    qxcergtrgt
+    мололдец
   </div>;
 };
 export default App;
