@@ -1,16 +1,34 @@
-import {useState} from 'react'
-
+import { useState } from "react";
 
 const App = () => {
-  let [state,setstate]=useState('')
-  let[value,setvalue]=useState('')
-  function add(){
-    setvalue(state)
+ 
+  let [value, setvalue] = useState("");
+  let [state,setstate] = useState([])
+
+  function add(e) {
+    setvalue(e.target.value)
   }
-  return <div>😒
-    <input type='text' onChange={(e)=>setstate(e.target.value)} value={state}/>
-    <button onClick={add}>add</button>
-    <p>{value}</p>
-  </div>;
+  const submitHandler = (e) => {
+    e.preventDefault()
+    setstate((prev) => {
+      return [...prev,{name:value}]
+    })
+  }
+  return (
+    <div>
+      😒
+      <input
+        type="text"
+        onChange={add}
+        value={value}
+      />
+      <button onClick={submitHandler}>add</button>
+      {
+        state.map((i) => {
+          return <li>{i.name}</li>
+        })
+      }
+    </div>
+  );
 };
 export default App;
