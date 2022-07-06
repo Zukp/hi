@@ -1,4 +1,10 @@
 const App = () => {
-  return <div>° 𐐪𐑂 ♡ 𐐪𐑂 ₒ 𐐪𐑂 ♡ 𐐪𐑂 °</div>;
+  return (
+    <div>
+      <p>° 𐐪𐑂 ♡ 𐐪𐑂 ₒ 𐐪𐑂 ♡ 𐐪𐑂 °</p>
+      <input type="text" />
+      <button>Click</button>
+    </div>
+  );
 };
 export default App;
